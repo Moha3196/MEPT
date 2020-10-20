@@ -1,0 +1,9 @@
+ body 
+ {
+    padding:0;
+    margin:0;
+ }
+h1        /* Aligns the text in the center*/
+  {
+    text-align:center;      /*Puts the text in the center of the screen*/
+  }
