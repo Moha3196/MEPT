@@ -78,6 +78,16 @@ class UserLookup
 
 }
 
+function ShowLogin()
+{
+  echo '<h4 id="loginHeader" class="center">Login</h4>
+  <form id="loginForm" method="post" action="login.php">
+    <formP>username</formP><input name="username" id="usernameField" type="text"></input><br>
+    <formP>password</formP><input name="password" id="passField" type="password"></input><br>
+    <input type="submit" name="login" id="loginBtn">
+  </form>';
+}
+
 ?>
 
 
@@ -85,12 +95,7 @@ class UserLookup
 <?php
 if(!isset($_POST['login']))
 {
-echo '<h4 id="loginHeader" class="center">Login</h4>
-<form id="loginForm" method="post" action="login.php">
-  <formP>username</formP><input name="username" id="usernameField" type="text"></input><br>
-  <formP>password</formP><input name="password" id="passField" type="password"></input><br>
-  <input type="submit" name="login" id="loginBtn">
-</form>';
+  ShowLogin();
 }
 else
 {
@@ -100,6 +105,7 @@ else
   LoadTemplate("head");
   LoadTemplate("header");
   echo '<body>';
+  LoadTemplate("overlay");
   if((strlen($_POST['username']) >= 5 || strlen($_POST['password']) >= 5) && (strlen($_POST['username']) <= 30 || strlen($_POST['password']) <= 30))
   {
     $sane_username = Sanitize($_POST['username']);
@@ -133,31 +139,33 @@ else
         {
           //Sucesses
           echo 'yeet :)';
+          echo '<script>OverlayMessage("Site is still under contruction",OverlayType.WARNING);</script>';
           LoadSite();
           $userLook->Close();
           die();
         }
         else
         {
-          echo '<h2 class="error">Wrong username or password 2</h2>';
+          echo '<script>OverlayMessage("Username or password is incorrect",OverlayType.ERROR);</script>';
           die();
         }
       }
       else
       {
-        echo '<h2 class="error">Wrong username or password 1</h2>';
+        echo '<script>OverlayMessage("Username or password is incorrect",OverlayType.ERROR);</script>';
         die();
       }
     }
 
   }
   else
-  {
+  {/*
     echo '<h2 class="center">Username or Password is too short or long for being valid</h2>';
     echo '<script>';
     echo 'function goBack(){document.location.href="index.php";}';
     echo '</script>';
-    echo '<button id="rtnBtn" onClick="goBack()">Go Back</button>';
+    echo '<button id="rtnBtn" onClick="goBack()">Go Back</button>';*/
+    echo '<script>OverlayMessage("Username or Password is too short or long for being valid",OverlayType.ERROR);</script>';
     die();
   }
 }

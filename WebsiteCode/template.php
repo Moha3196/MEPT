@@ -5,10 +5,14 @@ function LoadTemplate($area)
   if($area == "header")
   {
     echo "<link rel='stylesheet' href='template.css'>";
-
+    echo '<script src="mainJs.js"></script>';
     echo "<header id='header' class='center'>";
     echo "<h1 id='siteHeader' class='center'>Test Quiz System</h1> ";
     echo "</header>";
+  }
+  else if($area == "overlay")
+  {
+    echo '<div id="overlay"><h3 class="center" id="overlayTxt"></h3></div>';
   }
   else if($area == "footer")
   {
@@ -21,6 +25,10 @@ function LoadTemplate($area)
   else if($area == "lolFooter")
   {
     echo "<script src='megaAwesomeJavaScriptThatSucks.js'></script>";
+  }
+  else if($area == "userPage")
+  {
+
   }
 }
 
