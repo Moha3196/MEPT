@@ -1,3 +1,29 @@
+/*Animations*/
+@keyframes overlayAnimation
+{
+  from
+  {
+    transform: translateY(-300px);
+  }
+  to
+  {
+    transform: translateY(0px);
+  }
+}
+@keyframes overlayAnimationExit
+{
+  from
+  {
+    transform: translateY(-300px);
+    display:none;
+  }
+  to
+  {
+    transform: translateY(0px);
+  }
+}
+
+
 .center
 {
   text-align: center;
@@ -16,4 +42,56 @@ formP
   max-width: 300px;
   border: 2px solid black;
   border-radius: 2px;
+}
+
+@media only screen and (max-width: 600px)
+{
+  #overlay>h3
+  {
+    font-size: 10px;
+  }
+  #overlay
+  {
+    max-width: 100%;
+  }
+  #overlay>img
+  {
+    max-width: 40px;
+  }
+}
+@media only screen and (min-width: 601px)
+{
+  #overlay
+  {
+    max-width: 50%;
+  }
+  #overlay>img
+  {
+    max-width: 80px;
+  }
+}
+#overlay
+{
+  margin-left: auto;
+  margin-right: auto;
+  animation: overlayAnimation 2s, overlayAnimationExit 2s 5s reverse forwards;
+}
+
+#overlay.error
+{
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.3);
+}
+#overlay.info
+{
+  border: 2px solid rgba(31, 140, 249, 0.67);
+  border-radius: 10px;
+  background-color: rgba(31, 140, 249, 0.67);
+}
+#overlay.warning
+{
+  border: 2px solid rgba(249, 249, 31, 0.67);
+  border-radius: 10px;
+  background-color: rgba(249, 249, 31, 0.67);
 }
