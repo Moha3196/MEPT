@@ -7,6 +7,7 @@ require('./template.php');
 LoadTemplate("header");
 ?>
 <body>
+  <?php LoadTemplate("overlay");?>
   <br>
   <div id="loginWidget">
     <?php
@@ -15,4 +16,5 @@ LoadTemplate("header");
   </div>
 </body>
 <?php LoadTemplate("footer"); LoadTemplate("lolFooter");?>
+<?php LoadTemplate("sysstatus"); ?>
 </html>

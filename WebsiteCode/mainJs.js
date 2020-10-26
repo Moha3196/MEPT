@@ -1,11 +1,15 @@
+var overlayTag;
 var overlayObj;
 var overlayTxt;
 let overlayActive = true;
 
+var overlays = [];
+
 const OverlayType = {
   ERROR: 'error',
   INFO: 'info',
-  WARNING: 'warning'
+  WARNING: 'warning',
+  SUCCESS: 'success'
 }
 
 
@@ -24,35 +28,54 @@ function ToggleOverlay()
 
 function GenerateOverlayObj()
 {
-  overlayObj = document.getElementById("overlay");
-  if(overlayObj.getElementsByTagName("H3") == null)
+  overlayTag = document.getElementById("overlay");
+  const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  console.log("Detecting site to be " + width + "px in width");
+  if(overlayTag.style.marginLeft != (width/2)/2)
   {
-    overlayTxt = document.createElement("H3");
-    overlayTxt.className = "center";
-    overlayObj.appendChild(overlayTxt);
+    overlayTag.style.marginLeft = (width/2)/2 + "px";
+    overlayTag.style.marginRight = (width/2)/2 + "px";
   }
-  else
-  {
-    overlayTxt = overlayObj.childNodes[0];
-  }
+  var newOverlay = document.createElement("div");
+  newOverlay.className += "overlayEntry";
+  var newH3 = document.createElement("h3");
+  newH3.className = "center";
+  newOverlay.appendChild(newH3);
+  overlayTag.appendChild(newOverlay);
+  return newOverlay;
 }
 
 function OverlayMessage(text, overlayType)
 {
-  if(overlayObj == null)
+  var nOverlay;
+  if(overlayTag == null)
   {
-    GenerateOverlayObj();
+    overlayTag = document.getElementById("overlay");
   }
-  overlayTxt.innerText = text;
+  nOverlay = GenerateOverlayObj();
+  //setTimeout(function(){nOverlay.style.transform="translateY(" + (0+80*overlays.length) + ")";},2000);
+  nOverlay.childNodes[0].innerText = text;
   switch(overlayType)
   {
     case OverlayType.ERROR:
-      overlayObj.className += "error";
+      nOverlay.className += " error";
     break;
     case OverlayType.INFO:
-      overlayObj.className += "info";
+      nOverlay.className += " info";
     break;
     case OverlayType.WARNING:
-      overlayObj.className += "warning";
+      nOverlay.className += " warning";
+    break;
+    case OverlayType.SUCCESS:
+      nOverlay.className += " success";
+    break;
   }
+  overlays.push(nOverlay);
+  setTimeout(
+    function(){
+      overlays.pop();
+      console.log(overlays);
+      nOverlay.remove();
+    },9000
+  );
 }

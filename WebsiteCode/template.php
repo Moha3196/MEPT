@@ -12,11 +12,15 @@ function LoadTemplate($area)
   }
   else if($area == "overlay")
   {
-    echo '<div id="overlay"><h3 class="center" id="overlayTxt"></h3></div>';
+    echo '<div id="overlay"></div>';
   }
   else if($area == "footer")
   {
 
+  }
+  else if($area == "sysstatus")
+  {
+    echo '<script>OverlayMessage("System should be working",OverlayType.INFO);</script>';
   }
   else if($area == "head")
   {
