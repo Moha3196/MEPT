@@ -2,12 +2,14 @@
 /*
 Fill in the database access info here
 */
-$serverAdress = "";
-$serverUsername = "";
-$serverPassword = "";
-$DBName = "";
+
+
 function Connect()
 {
+  $serverAdress = "localhost";
+  $serverUsername = "root";
+  $serverPassword = "";
+  $DBName = "mept";
   $conn = new mysqli($serverAdress, $serverUsername,$serverPassword, $DBName);
   if (!$conn)
   {

@@ -1,3 +1,6 @@
+<?php
+$GLOBALS["pagename"] = "";
+?>
 <html>
 <head>
   <title>Test Quiz!</title>

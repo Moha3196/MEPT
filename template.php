@@ -1,5 +1,5 @@
 <?php
-$global_pagename = "page? - Am I.... A PAGE?!?!?!?!?";
+$GLOBALS["pagename"] = "page? - Am I.... A PAGE?!?!?!?!?";
 function LoadTemplate($area)
 {
   if($area == "header")
@@ -24,7 +24,7 @@ function LoadTemplate($area)
   }
   else if($area == "head")
   {
-    echo '<head><title>' . "Test Quiz System " . $global_pagename . '</title><meta charset=UTF-8></head>';
+    echo '<head><title>' . "Test Quiz System " . $GLOBALS["pagename"] . '</title><meta charset=UTF-8></head>';
   }
   else if($area == "lolFooter")
   {
