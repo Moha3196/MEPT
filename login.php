@@ -138,8 +138,8 @@ else
         if($userLook->PasswordCheck())
         {
           //Sucesses
-          echo 'yeet :)';
-          echo '<script>OverlayMessage("Site is still under contruction",OverlayType.WARNING);</script>';
+          echo 'yeet :) yoot';
+          echo '<script>OverlayMessage("Site is still under contruction",OverlayType.INFO);</script>';
           LoadSite();
           $userLook->Close();
           die();
