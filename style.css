@@ -9,8 +9,35 @@ h1                          /* Aligns the text in the center*/
 button       
   {
     display: block;
-    margin-left: auto;    
-    margin-right: auto;  
+    margin-left: auto;
+    margin-right: auto;
     font-size: 20px;  
 }
-  
+
+.center
+{
+	border: 3px solid ;
+	display: block;  
+	margin-right: 28.5%;
+	margin-left: 28.5%;
+	height: auto;
+	padding: 10px;
+}
+label
+{
+	font-size: 20px;
+
+}
+table,td{
+	border: 1px solid black;
+	padding: 5px;
+	text-align:center; 
+	border-collapse: collapse;	
+}
+table
+{
+	width:100%;
+}
+
+
+tr:hover {background-color:#f5f5f5;}
