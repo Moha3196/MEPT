@@ -1,5 +1,6 @@
 <?php
 require(".\dbconnect.php");
+echo "<link rel='stylesheet' href='template.css'>";
 class UserLookup
 {
   public $id = 0;
@@ -80,11 +81,11 @@ class UserLookup
 
 function ShowLogin()
 {
-  echo '<h4 id="loginHeader" class="center">Login</h4>
-  <form id="loginForm" method="post" action="login.php">
-    <formP>username</formP><input name="username" id="usernameField" type="text"></input><br>
-    <formP>password</formP><input name="password" id="passField" type="password"></input><br>
-    <input type="submit" name="login" id="loginBtn">
+  echo '<h4 id="loginHeader" class="center" style="font-size: 50px;">Login</h4>
+  <form id="loginForm" method="post" action="login.php" style="margin-left: 20%; margin-right: 20%;">
+    <formP style="margin-right: 20px; font-size: 20px;"> Username </formP><input name="username" id="usernameField" type="text"></input><br><br>  <!-- the username text box -->
+    <formP style="margin-right: 24px; font-size: 20px;"> Password </formP><input name="password" id="passField" type="password"></input><br><br>  <!-- the password text box -->
+	<button type="submit" name="login" id="loginBtn" style="">Login</button>  <!-- The login button -->
   </form>';
 }
 
@@ -137,10 +138,10 @@ else
       {
         if($userLook->PasswordCheck())
         {
-          //Sucesses
-          echo 'yeet :) yoot';
+          //Success
+          echo 'yoot :)';
           echo '<script>OverlayMessage("Site is still under contruction",OverlayType.INFO);</script>';
-          LoadSite();
+          TeacherLoggedIn();
           $userLook->Close();
           die();
         }
@@ -171,10 +172,10 @@ else
 }
 echo '</body></html>';
 
-function LoadSite()
+function TeacherLoggedIn()
 {
-
-
+  echo '<br><br><br> <button style="display: block;"> + Opret ny klasse</button>';
+  
 }
 
 ?>

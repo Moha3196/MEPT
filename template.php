@@ -32,7 +32,7 @@ function LoadTemplate($area)
   }
   else if($area == "userPage")
   {
-
+	
   }
 }
 
