@@ -174,8 +174,20 @@ echo '</body></html>';
 
 function TeacherLoggedIn()
 {
-  echo '<br><br><br> <button style="display: block;"> + Opret ny klasse</button>';
-  
+	echo '<br><br><br>
+	<button style="display: block;" onClick="CreateNewClass();"> + Opret ny klasse </button>
+	<br><br><br>
+	<button style="display: block;" onClick="CreateNewTest();"> + Opret ny test </button>';
+}
+
+function CreateNewClass()
+{
+	
+}
+
+function CreateNewTest()
+{
+	
 }
 
 ?>
