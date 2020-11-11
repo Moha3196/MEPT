@@ -23,10 +23,25 @@ button
 	height: auto;
 	padding: 10px;
 }
+.StudentNames
+{
+	width:12%;
+	
+}
+.arrows
+{
+	width:10%;
+	
+}
 label
 {
 	font-size: 20px;
-
+	text-align:center;
+}
+input
+{
+	text-align:center;
+	
 }
 table,td{
 	border: 1px solid black;
