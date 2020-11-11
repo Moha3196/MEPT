@@ -12,7 +12,7 @@ LoadTemplate("header");
 <body>
   <?php LoadTemplate("overlay");?>
   <br>
-  <div id="loginWidget" style="display: block; margin-left: auto; margin-right: auto; margin: 10% auto;">
+  <div id="loginWidget">
     <?php
       require('./login.php');
     ?>

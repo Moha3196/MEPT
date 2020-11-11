@@ -1,12 +1,12 @@
 <?php
 require(".\dbconnect.php");
-echo "<link rel='stylesheet' href='template.css'>";
 class UserLookup
 {
   public $id = 0;
   public $username;
   public $password;
   public $mysql;
+  public $type = -1;
 
 
   public function __construct( $Username, $Password )
@@ -52,7 +52,30 @@ class UserLookup
       die();
     }
   }
-
+  public function GetUserType()
+  {
+	  if($this->id != 0)
+	  {
+    $sqlRequest = "SELECT type FROM Users WHERE id=$this->id";
+    $result = $this->mysql->query($sqlRequest);
+    if ($result->num_rows > 0)
+    {
+      while($row = $result->fetch_assoc())
+      {
+        $this->type = $row['type'];
+      }
+    }
+    else
+    {
+      echo "<h2 id='loginError' class='error'>DataBase Error 1</h2>";
+      die();
+    }
+	  }
+	  else {
+		  echo "<h2 id='loginError' class='error'>Can't look up User 0</h2>";
+		  return FALSE;
+	  }
+  }
   public function PasswordCheck()
   {
     $sqlRequest = "SELECT password FROM Users WHERE id=$this->id";
@@ -81,11 +104,11 @@ class UserLookup
 
 function ShowLogin()
 {
-  echo '<h4 id="loginHeader" class="center" style="font-size: 50px;">Login</h4>
-  <form id="loginForm" method="post" action="login.php" style="margin-left: 20%; margin-right: 20%;">
-    <formP style="margin-right: 20px; font-size: 20px;"> Username </formP><input name="username" id="usernameField" type="text"></input><br><br>  <!-- the username text box -->
-    <formP style="margin-right: 24px; font-size: 20px;"> Password </formP><input name="password" id="passField" type="password"></input><br><br>  <!-- the password text box -->
-	<button type="submit" name="login" id="loginBtn" style="">Login</button>  <!-- The login button -->
+  echo '<h4 id="loginHeader" class="center">Login</h4>
+  <form id="loginForm" method="post" action="login.php">
+    <formP > Username </formP><input name="username" id="usernameField" type="text"></input><br><br>  <!-- the username text box -->
+    <formP > Password </formP><input name="password" id="passField" type="password"></input><br><br>  <!-- the password text box -->
+	<button type="submit" name="login" id="loginBtn">Login</button>  <!-- The login button -->
   </form>';
 }
 
@@ -94,13 +117,14 @@ function ShowLogin()
 
 
 <?php
+include_once("./template.php");
 if(!isset($_POST['login']))
 {
+  LoadTemplate("header");
   ShowLogin();
 }
 else
 {
-  include("./template.php");
   $global_pagename = "User Page?";
   echo '<html>';
   LoadTemplate("head");
@@ -139,10 +163,14 @@ else
         if($userLook->PasswordCheck())
         {
           //Success
-          echo 'yoot :)';
           echo '<script>OverlayMessage("Site is still under contruction",OverlayType.INFO);</script>';
-          TeacherLoggedIn();
-          $userLook->Close();
+          $userLook->GetUserType();
+		  if($userLook->type == 1) {
+			TeacherLoggedIn();
+		  } else if($userLook->type == 0) {
+			  StudentLoggedIn();
+		  }
+		$userLook->Close();
           die();
         }
         else
@@ -172,23 +200,7 @@ else
 }
 echo '</body></html>';
 
-function TeacherLoggedIn()
-{
-	echo '<br><br><br>
-	<button style="display: block;" onClick="CreateNewClass();"> + Opret ny klasse </button>
-	<br><br><br>
-	<button style="display: block;" onClick="CreateNewTest();"> + Opret ny test </button>';
-}
 
-function CreateNewClass()
-{
-	
-}
-
-function CreateNewTest()
-{
-	
-}
 
 ?>
 
@@ -200,6 +212,16 @@ function Sanitize($input)
   return filter_var($input,FILTER_SANITIZE_STRING);
 }
 
+function TeacherLoggedIn() {
+	echo '<script src="teacher.js"></script>';
+	echo '<button onclick="CreateNewClass()"> + Opret ny klasse</button>';
+	echo '<button onclick="CreateNewTest()"> + Opret ny test</button>';
+	
+}
 
+function StudentLoggedIn() {
+	echo '<script src="student.js"></script>';
+	echo '<button onclick="CreateNewClass()"> + Opret ny klasse</button>';
+}
 
 ?>

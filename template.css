@@ -34,6 +34,7 @@ h3 {
 }   
 h4 {
 	text-align:center;
+	font-size: 50px;
 }   
 h5 {
 	text-align:center;
@@ -45,20 +46,27 @@ p {
 	text-align:center;
 }
 
+form {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+formP {
+	margin-right: 20px;
+	font-size: 20px;
+}
 
 .center
 {
   text-align: center;
 
 }
+
 #header
 {
   border: 2px solid black;
 }
-formP
-{
-  font-size: 100px;
-}
+
 #loginWidget
 {
   max-width: 300px;
@@ -67,6 +75,14 @@ formP
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin: 10% auto;
+}
+
+div {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 10% auto;
 }
 
 @media only screen and (max-width: 600px)

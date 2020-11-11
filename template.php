@@ -4,6 +4,7 @@ function LoadTemplate($area)
 {
   if($area == "header")
   {
+	echo "<header>";
     echo "<link rel='stylesheet' href='template.css'>";
     echo '<script src="mainJs.js"></script>';
     echo "<header id='header' class='center'>";
