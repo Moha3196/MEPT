@@ -18,17 +18,24 @@ button
 {
 	border: 3px solid ;
 	display: block;  
-	margin-right: 28.5%;
-	margin-left: 28.5%;
+	margin: 1% 12%;
 	height: auto;
 	padding: 10px;
+}
+.padding
+{
+	 padding : 25px ;
+	
+	
+	
+	
 }
 label
 {
 	font-size: 20px;
 
 }
-table,td{
+table,td, tr, th{
 	border: 1px solid black;
 	padding: 5px;
 	text-align:center; 
