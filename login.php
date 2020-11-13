@@ -90,7 +90,7 @@ class UserLookup
     {
       while($row = $result->fetch_assoc())
       {
-        if(hash('sha512', $this->password) === strtolower($row['password']))  //hashes the written password with sha512
+        if(hash('sha512', $this->password) === strtolower($row['password']))  //hashes the written password with sha512 and makes it all lower-case
         {                                                                     //if it matches the pre-hashed password in DB, then returns true
           return TRUE;
           break;
@@ -110,7 +110,7 @@ class UserLookup
 
 function ShowLogin()  //made as a form because user will fill out username + password, then "login" which sends the data to DB
 {
-  echo '<h4 id="loginHeader" class="center">Login</h4>
+  echo '<h4 id="loginHeader" style="text-align: center;">Login</h4>
   <form id="loginForm" method="post" action="login.php">
     <formP > Username </formP><input name="username" id="usernameField" type="text"></input><br><br>   <!-- the username text box -->
     <formP > Password </formP><input name="password" id="passField" type="password"></input><br><br>   <!-- the password text box -->
@@ -205,9 +205,6 @@ else
   }
 }
 echo '</body></html>';
-
-
-
 ?>
 
 
@@ -221,9 +218,7 @@ function Sanitize($input)
 
 function TeacherLoggedIn() {  //links to the teacher's home-screen
 	echo '<script src="teacher.js"></script>';
-	echo '<button onclick="CreateNewClass()"> + Opret ny klasse</button>';
-	echo '<button onclick="CreateNewTest()"> + Opret ny test</button>';
-	
+	echo '<script>document.location.href = "TeacherFrontPage.html";</script>';
 }
 
 function StudentLoggedIn() {  //links to the student's home-screen
