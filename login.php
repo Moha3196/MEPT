@@ -13,25 +13,27 @@ class UserLookup
   {
     $this->username = $Username;
     $this->password = $Password;
-    $this->mysql = Connect();
+    $this->mysql = Connect();  //runs function that connects to DB
   }
 
-  public function Close()
+  public function Close()  //function for closing DB
   {
     if($this->mysql)
     {
-      $this->mysql->close();
+      $this->mysql->close();  //this actually closes it
     }
   }
 
   public function Open()
   {
-    $this->Close();
-    $this->mysql = Connect();
+    $this->Close();  //makes sure it's closed before trying to open
+    $this->mysql = Connect();  //runs connect func again
   }
+  
+  
   public function UsernameCheck()
   {
-    $sqlRequest = "SELECT username, id FROM Users";
+    $sqlRequest = "SELECT username, id FROM Users";  //gets the username from DB
     $result = $this->mysql->query($sqlRequest);
     if ($result->num_rows > 0)
     {
@@ -48,15 +50,17 @@ class UserLookup
     }
     else
     {
-      echo "<h2 id='loginError' class='error'>DataBase Error 1</h2>";
+      echo "<h2 id='loginError' class='error'>DataBase Error 1</h2>";  //in case of login error, says this
       die();
     }
   }
+  
+  
   public function GetUserType()
   {
 	  if($this->id != 0)
 	  {
-    $sqlRequest = "SELECT type FROM Users WHERE id=$this->id";
+    $sqlRequest = "SELECT type FROM Users WHERE id=$this->id";  //gets the type for the user
     $result = $this->mysql->query($sqlRequest);
     if ($result->num_rows > 0)
     {
@@ -67,15 +71,17 @@ class UserLookup
     }
     else
     {
-      echo "<h2 id='loginError' class='error'>DataBase Error 1</h2>";
+      echo "<h2 id='loginError' class='error'>DataBase Error 1</h2>";  //in case of error 
       die();
     }
 	  }
 	  else {
-		  echo "<h2 id='loginError' class='error'>Can't look up User 0</h2>";
+		  echo "<h2 id='loginError' class='error'>Can't look up User 0</h2>";  //in case we look at the non-existant "user 0"
 		  return FALSE;
 	  }
   }
+  
+  
   public function PasswordCheck()
   {
     $sqlRequest = "SELECT password FROM Users WHERE id=$this->id";
@@ -84,31 +90,31 @@ class UserLookup
     {
       while($row = $result->fetch_assoc())
       {
-        if(hash('sha512', $this->password) === strtolower($row['password']))
-        {
+        if(hash('sha512', $this->password) === strtolower($row['password']))  //hashes the written password with sha512
+        {                                                                     //if it matches the pre-hashed password in DB, then returns true
           return TRUE;
           break;
         }
       }
-      return FALSE;
+      return FALSE;  //if written pw does not match pre-hashed pw in DB, then returns false
     }
     else
     {
-      echo "<h2 id='loginError' class='error'>DataBase Error</h2>";
+      echo "<h2 id='loginError' class='error'>DataBase Error</h2>";  //heehoo another error for u
       echo "Request : " . $sqlRequest;
       die();
     }
   }
-
 }
 
-function ShowLogin()
+
+function ShowLogin()  //made as a form because user will fill out username + password, then "login" which sends the data to DB
 {
   echo '<h4 id="loginHeader" class="center">Login</h4>
   <form id="loginForm" method="post" action="login.php">
-    <formP > Username </formP><input name="username" id="usernameField" type="text"></input><br><br>  <!-- the username text box -->
-    <formP > Password </formP><input name="password" id="passField" type="password"></input><br><br>  <!-- the password text box -->
-	<button type="submit" name="login" id="loginBtn">Login</button>  <!-- The login button -->
+    <formP > Username </formP><input name="username" id="usernameField" type="text"></input><br><br>   <!-- the username text box -->
+    <formP > Password </formP><input name="password" id="passField" type="password"></input><br><br>   <!-- the password text box -->
+	<button type="submit" name="login" id="loginBtn">Login</button>                                    <!-- The login button -->
   </form>';
 }
 
@@ -158,19 +164,19 @@ else
         die("mysql not intilized??");
       }
       //$userLook->Open();
-      if($userLook->UsernameCheck())
+      if($userLook->UsernameCheck())  //if both username and password (hashed) match, then logs in
       {
         if($userLook->PasswordCheck())
         {
           //Success
           echo '<script>OverlayMessage("Site is still under contruction",OverlayType.INFO);</script>';
           $userLook->GetUserType();
-		  if($userLook->type == 1) {
-			TeacherLoggedIn();
-		  } else if($userLook->type == 0) {
-			  StudentLoggedIn();
+		  if($userLook->type == 1) {  //type 1 means a teacher account
+			TeacherLoggedIn();  //loads teacher-related pages
+		  } else if($userLook->type == 0) {  //type 0 means a student account
+			  StudentLoggedIn();  //loads student-related pages
 		  }
-		$userLook->Close();
+		$userLook->Close();  //we close the userLook, because we have now logged in
           die();
         }
         else
@@ -212,14 +218,15 @@ function Sanitize($input)
   return filter_var($input,FILTER_SANITIZE_STRING);
 }
 
-function TeacherLoggedIn() {
+
+function TeacherLoggedIn() {  //links to the teacher's home-screen
 	echo '<script src="teacher.js"></script>';
 	echo '<button onclick="CreateNewClass()"> + Opret ny klasse</button>';
 	echo '<button onclick="CreateNewTest()"> + Opret ny test</button>';
 	
 }
 
-function StudentLoggedIn() {
+function StudentLoggedIn() {  //links to the student's home-screen
 	echo '<script src="student.js"></script>';
 	echo '<button onclick="CreateNewClass()"> + Opret ny klasse</button>';
 }

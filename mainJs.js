@@ -5,7 +5,7 @@ let overlayActive = true;
 
 var overlays = [];
 
-const OverlayType = {
+const OverlayType = {  //creates different overlay types
   ERROR: 'error',
   INFO: 'info',
   WARNING: 'warning',

@@ -6,7 +6,7 @@ $GLOBALS["pagename"] = "";
   <title>Test Quiz</title>
 </head>
 <?php
-require('./template.php');
+require('./template.php');  //so the system uses this file
 LoadTemplate("header");
 ?>
 <body>
@@ -14,7 +14,7 @@ LoadTemplate("header");
   <br>
   <div id="loginWidget">
     <?php
-      require('./login.php');
+      require('./login.php');  //so the system uses this file
     ?>
   </div>
 </body>
