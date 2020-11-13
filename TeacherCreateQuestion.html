@@ -1,0 +1,61 @@
+<!doctype html>
+  <html>
+  <link rel="stylesheet" href="style.css"><!-- refere til css dokumentet -->
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="MEPT.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <title>Quiz Creater</title>
+
+  </head>
+  <body>
+
+  <h1 ><input style="display: block; margin:0 auto; width:20%;font-size:20px;"type="text" id="Question" name="Question" value="Question"></h1>
+
+
+<div class="center">
+
+<table>  <!-- Laver skemaet hvor lærere kan putte svar ind-->
+
+  <tr>
+    <td> <input style="display: block; margin:0 auto; width:99%;font-size:20px;"type="text" id="QuestionAnswer1" name="QuestionAnswer1" value=""></td>
+	<td style="width : 5%;">  <input type="radio" id="QuestionAnswer1" name="QuestionAnswer1" value=""></td>
+  </tr>
+  <tr>
+
+    <td> <input style="display: block; margin:0 auto; width:99%;font-size:20px;"type="text" id="QuestionAnswer2" name="QuestionAnswer2" value=""></td>
+	<td style="width : 5%;">  <input type="radio" id="QuestionAnswer2" name="QuestionAnswer2" value=""></td>
+  </tr>
+    <tr>
+    <td> <input style="display: block; margin:0 auto; width:99%;font-size:20px;"type="text" id="QuestionAnswer3" name="QuestionAnswer3" value=""></td>
+	<td style="width : 5%;"><input type="radio"id="QuestionAnswer3" name="QuestionAnswer3" value=""></td>
+  </tr>
+</table>
+<table>
+    <tr>
+	<td class="arrows"><button class="Select">Previous Question</button></td><!--Laver en knap, der kan gør så man kan gå tilbage til et tidligere spørgsmål -->
+	<td class="arrows"><button class="Remove">Next Question</button></td><!--Laver en knap, der kan gør så man kan gå frem igen -->
+  </tr>
+  </table>
+<table>
+    <tr>
+	<td class="arrows"><button class="Select">Remove Question</button></td><!--Laver en knap, der kan fjerne et spørgsmål -->
+	<td class="arrows"><button class="Remove">Add Question</button></td><!--Laver en knap, der kan føje   et spørgsmål -->
+  </tr>
+  </table>
+<table>
+    <tr>
+	<td style="border:0px"><button class="Remove">Finish Quiz</button></td>
+  </tr>
+</table>
+</div>
+
+
+  
+  </body>
+  </html>
