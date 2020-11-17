@@ -218,12 +218,12 @@ function Sanitize($input)
 
 function TeacherLoggedIn() {  //links to the teacher's home-screen
 	echo '<script src="teacher.js"></script>';
-	echo '<script>document.location.href = "TeacherFrontPage.html";</script>';
+	echo '<script>document.location.href = "TeacherFrontPage.php";</script>';
 }
 
 function StudentLoggedIn() {  //links to the student's home-screen
 	echo '<script src="student.js"></script>';
-	echo '<script>document.location.href = "StudentFrontPage.html";</script>';
+	echo '<script>document.location.href = "StudentFrontPage.php";</script>';
 }
 
 ?>

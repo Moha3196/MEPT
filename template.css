@@ -10,12 +10,13 @@
     transform: translateY(0px);
   }
 }
+
 @keyframes overlayAnimationExit
 {
   from
   {
     transform: translateY(-3000px);
-    display:none;
+    display: none;
   }
   to
   {
@@ -24,26 +25,34 @@
 }
 
 h1 {
-	text-align:center;
+	text-align: center;
 }   
 h2 {    
-	text-align:center;
+	text-align: center;
 }   
 h3 {
-	text-align:center;
+	text-align: center;
 }   
 h4 {
-	text-align:center;
+	text-align: center;
 	font-size: 50px;
 }   
 h5 {
-	text-align:center;
+	text-align: center;
 }       
 h6 {
-	text-align:center;
+	text-align: center;
 }
 p {
-	text-align:center;
+	text-align: center;
+}
+
+button       
+  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;  
 }
 
 form {
@@ -59,12 +68,8 @@ formP {
 .center
 {
 	text-align: center;
-	/*border: 3px solid;
-	display: block;
-	margin: 1% 12%;
-	height: auto;
-	padding: 10px;*/
 }
+
 .center2
 {
 	border: 3px solid;
@@ -112,6 +117,7 @@ div {
     max-width: 40px;
   }
 }
+
 @media only screen and (min-width: 601px)
 {
   .overlayEntry
@@ -123,6 +129,7 @@ div {
     max-width: 80px;
   }
 }
+
 .overlayEntry
 {
   display: block;
@@ -165,7 +172,6 @@ div {
 }
 
 
-/*   ------- CSS-kode for Lærer-forside -------   */
 .klasseTestButton
 {
 	 display: block;
@@ -182,49 +188,60 @@ div {
 
 .padding
 {
-	 padding : 31px;
-	
+	 padding: 31px;
 }
 
 .holdNavn
 {
-	font-size:30px;
-	
-	
+	font-size: 30px;
 }
 
 .titler
 {
-	font-size:45px;
-	
-	
+	font-size: 45px;
+}
+
+.StudentNames
+{
+	width: 12%;
+}
+
+.arrows
+{
+	width: 10%;
+}
+
+input
+{
+	text-align:center;
 }
 
 label
 {
 	font-size: 20px;
-
+	text-align: center;
 }
 
 table,td, tr, th
 {
 	border: 1px solid black;
 	padding: 5px;
-	text-align:center; 
+	text-align: center; 
 	border-collapse: collapse;	
 }
 
 table
 {
-	width:100%;
+	width: 100%;
 }
 
 td,th
 {
-	width:20%;
+	width: 20%;
 }
 
 tr:hover
 {
-	background-color:#f5f5f5;
+	background-color: #f5f5f5;
 }
+
