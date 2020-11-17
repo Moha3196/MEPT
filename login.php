@@ -1,6 +1,5 @@
 <?php
-require(".\dbconnect.php");
-
+require("./dbconnect.php");
 class UserLookup
 {
   public $id = 0;
