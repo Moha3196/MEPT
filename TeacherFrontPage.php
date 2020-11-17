@@ -2,7 +2,8 @@
 <!doctype html>
 <html>
 <!--<link rel="stylesheet" href="template.css"> <!-- refere til mit css dokument -->
- <?php LoadTemplate("head");?>
+ <?php LoadTemplate("header");?>
+ 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -223,7 +223,7 @@ function TeacherLoggedIn() {  //links to the teacher's home-screen
 
 function StudentLoggedIn() {  //links to the student's home-screen
 	echo '<script src="student.js"></script>';
-	echo '<button onclick="CreateNewClass()"> + Opret ny klasse</button>';
+	echo '<script>document.location.href = "StudentFrontPage.html";</script>';
 }
 
 ?>
