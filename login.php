@@ -1,5 +1,5 @@
 <?php
-require("./dbconnect.php");
+require(".\dbconnect.php");
 class UserLookup
 {
   public $id = 0;
@@ -33,7 +33,7 @@ class UserLookup
   
   public function UsernameCheck()
   {
-    $sqlRequest = "SELECT username, id FROM Users";  //gets the username from DB
+    $sqlRequest = "SELECT username, id FROM Users";  //sets the variable to whatever is in the "username" from DB
     $result = $this->mysql->query($sqlRequest);
     if ($result->num_rows > 0)
     {
@@ -60,7 +60,7 @@ class UserLookup
   {
 	  if($this->id != 0)
 	  {
-    $sqlRequest = "SELECT type FROM Users WHERE id=$this->id";  //gets the type for the user
+    $sqlRequest = "SELECT type FROM Users WHERE id=$this->id";  //sets the variable to whatever is in the "type" from DB
     $result = $this->mysql->query($sqlRequest);
     if ($result->num_rows > 0)
     {
