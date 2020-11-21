@@ -14,6 +14,7 @@
 <body> 
 
 <button id="close" class="closing" style ="border: none; position: fixed; onClick="javascript:close_clip()"><img src="MEPT.png" width="100" height="100" ></button>
+
 <div class="center2" style = "padding-top : 22px;">
 <button class = "klasseTestButton"  style=" float: right; width: 20%; font-size: 30px; margin-right: 10px" type="button" onclick="CreateNewTest();">+ Opret ny test</button>
 <button class ="klasseTestButton" style=" float: right; margin-left: 3.0%;  width: 20%; font-size: 30px; margin-bottom : 10px; margin-right: 10px;"  type="button" onclick="CreateNewClass();">+ Opret ny klasse</button>
@@ -25,30 +26,30 @@
   -->	
   
 
-<text style ="font-size : 30px; margin-left: 5px;">
-Forrige test
-</text>
+<text style ="font-size : 30px; margin-left: 5px;">Forrige test</text>
 
 <tr style ="padding-top : 200px;">
-	<th style = "padding : 15px;"><label for="Hold">Hold</label></</th>
-	<th><label for="Hold">Opgavetitel</label></th>
-	<th><label for="Hold">Besvarelser</label></th>
-	<th><label for="Hold">Startdato</label></th>
-	<th><label for="Hold">Afleveringsfrist</label></</th>
+	<th style = "padding : 15px;"><label>Hold</label></</th>
+	<th><label>Opgavetitel</label></th>
+	<th><label>Besvarelser</label></th>
+	<th><label>Startdato</label></th>
+	<th><label>Afleveringsfrist</label></</th>
 </tr>
+
 <tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Lene Hau</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
+	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
 </tr>
+
 <tr>
-	<td class = "padding" ><label class = "holdNavn" for="Hold">Jane Goodall</label></td>
-	<td><label for="Hold">ingen	</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
+	<td class = "padding" ><label class = "holdNavn">Jane Goodall</label></td>
+	<td><label>ingen	</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
 </tr>
 	
 
@@ -70,64 +71,67 @@ Forrige test
  -->
   
 </table>
-<table>
-<br><br>
-<text style ="font-size : 30px; margin-left: 5px;">
-Nuværende tests
-</text>
-
-<tr>
-	<th style = "padding : 15px"><label for="Hold">Hold</label></</th>
-	<th><label for="Hold">Opgavetitel</label></th>
-	<th><label for="Hold">Besvarelser</label></th>
-	<th><label for="Hold">Startdato</label></th>
-	<th><label for="Hold">Afleveringsfrist</label></</th>
-</tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Lene Hau</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-</tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Jane Goodall</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-</tr>
-</table>
-</table>
 
 <table>
 <br><br>
-<text style ="font-size : 30px; margin-left: 5px;">
-Planlagte tests
-</text>
+
+<text style ="font-size : 30px; margin-left: 5px;">Nuværende tests</text>
 
 <tr>
-<th style = "padding : 15px"><label for="Hold">Hold</label></</th>
-	<th><label for="Hold">Opgavetitel</label></th>
-	<th><label for="Hold">Besvarelser</label></th>
-	<th><label for="Hold">Startdato</label></th>
-	<th><label for="Hold">Afleveringsfrist</label></</th>
+	<th style = "padding : 15px"><label>Hold</label></</th>
+	<th><label>Opgavetitel</label></th>
+	<th><label>Besvarelser</label></th>
+	<th><label>Startdato</label></th>
+	<th><label>Afleveringsfrist</label></</th>
 </tr>
+
 <tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Lene Hau</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
+	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
 </tr>
+
 <tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Jane Goodall</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
+	<td class = "padding"><label class = "holdNavn">Jane Goodall</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
 </tr>
 </table>
+
+<table>
+<br><br>
+
+<text style ="font-size : 30px; margin-left: 5px;">Planlagte tests</text>
+
+<tr>
+<th style = "padding : 15px"><label>Hold</label></</th>
+	<th><label>Opgavetitel</label></th>
+	<th><label>Besvarelser</label></th>
+	<th><label>Startdato</label></th>
+	<th><label>Afleveringsfrist</label></</th>
+</tr>
+
+<tr>
+	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+</tr>
+
+<tr>
+	<td class = "padding"><label class = "holdNavn">Jane Goodall</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+</tr>
+</table>
+
 </div>
 
 </body>

@@ -84,7 +84,7 @@ class UserLookup
   
   public function PasswordCheck()
   {
-    $sqlRequest = "SELECT password FROM Users WHERE id=$this->id";
+    $sqlRequest = "SELECT password FROM Users WHERE id=$this->id";  //gets password form "users" table
     $result = $this->mysql->query($sqlRequest);
     if ($result->num_rows > 0)
     {
@@ -108,7 +108,7 @@ class UserLookup
 }
 
 
-function ShowLogin()  //made as a form because user will fill out username + password, then "login" which sends the data to DB
+function ShowLogin()  //made as a form because the user will fill out username + password, then "login" which sends the data to DB (if login is correct)
 {
   echo '<h4 id="loginHeader" style="text-align: center;">Login</h4>
   <form id="loginForm" method="post" action="login.php">
@@ -181,13 +181,13 @@ else
         }
         else
         {
-          echo '<script>OverlayMessage("Username or password is incorrect",OverlayType.ERROR);</script>';
+          echo '<script>OverlayMessage("Username or password is incorrect",OverlayType.ERROR);</script>';  //you probably made a typo when entering login details
           die();
         }
       }
       else
       {
-        echo '<script>OverlayMessage("Username or password is incorrect",OverlayType.ERROR);</script>';
+        echo '<script>OverlayMessage("Username or password is incorrect",OverlayType.ERROR);</script>';  //or maybe it's just not your day today?
         die();
       }
     }

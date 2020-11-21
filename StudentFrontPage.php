@@ -19,35 +19,35 @@
 <table>
   
 
-<text style ="font-size : 30px; margin-left: 5px;">
-Forrige test
-</text>
+<text style ="font-size : 30px; margin-left: 5px;">Forrige test</text>
 
 <tr style ="padding-top : 200px;">
 	<th style = "padding : 15px;"><label>Hold</label></</th>	
-	<th><label >Opgavetitel</label></th>
-	<th><label >Besvarelser</label></th>
-	<th><label >Startdato</label></th>
-	<th><label >Afleveringsfrist</label></</th>
+	<th><label>Opgavetitel</label></th>
+	<th><label>Besvarelser</label></th>
+	<th><label>Startdato</label></th>
+	<th><label>Afleveringsfrist</label></</th>
 </tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
-	<td><?php getTests();?></td>  <!-- runs getTests-function from testSystem.php-->
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-</tr>
-<tr>
-	<td class = "padding" ><label class = "holdNavn">Jane Goodall</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-</tr>
+
+<!-- <tr> -->
+	<!-- <td class = "padding"><label class = "holdNavn">Lene Hau</label></td> -->
+	<!-- <td><?php //getTests();?></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<?php getTests();?>
+<!-- </tr> -->
+
+
+<!-- how everything would look if there were no tests in the database -->
+<!-- <tr> -->
+	<!-- <td class = "padding"><label class = "holdNavn">Jane Goodall</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+<!-- </tr> -->
 	
-
-
-
 
  <!-- <tr>
     <td>  <label for="Answer">Answer1</label></td>
@@ -64,64 +64,67 @@ Forrige test
  -->
   
 </table>
-<table>
-<br><br>
-<text style ="font-size : 30px; margin-left: 5px;">
-Nuværende tests
-</text>
-
-<tr>
-	<th style = "padding : 15px"><label for="Hold">Hold</label></</th>
-	<th><label for="Hold">Opgavetitel</label></th>
-	<th><label for="Hold">Besvarelser</label></th>
-	<th><label for="Hold">Startdato</label></th>
-	<th><label for="Hold">Afleveringsfrist</label></</th>
-</tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Lene Hau</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-</tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Jane Goodall</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-</tr>
-</table>
-</table>
 
 <table>
 <br><br>
-<text style ="font-size : 30px; margin-left: 5px;">
-Planlagte tests
-</text>
+
+<text style ="font-size : 30px; margin-left: 5px;">Nuværende tests</text>
 
 <tr>
-<th style = "padding : 15px"><label for="Hold">Hold</label></</th>
-	<th><label for="Hold">Opgavetitel</label></th>
-	<th><label for="Hold">Besvarelser</label></th>
-	<th><label for="Hold">Startdato</label></th>
-	<th><label for="Hold">Afleveringsfrist</label></</th>
+	<th style = "padding : 15px"><label>Hold</label></</th>
+	<th><label>Opgavetitel</label></th>
+	<th><label>Besvarelser</label></th>
+	<th><label>Startdato</label></th>
+	<th><label>Afleveringsfrist</label></</th>
+</tr>
+
+<tr>
+	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+</tr>
+
+<tr>
+	<td class = "padding"><label class = "holdNavn">Jane Goodall</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+</tr>
+
+</table>
+</table>
+
+<table>
+<br><br>
+
+<text style ="font-size : 30px; margin-left: 5px;">Planlagte tests</text>
+
+<tr>
+<th style = "padding : 15px"><label>Hold</label></</th>
+	<th><label>Opgavetitel</label></th>
+	<th><label>Besvarelser</label></th>
+	<th><label>Startdato</label></th>
+	<th><label>Afleveringsfrist</label></</th>
 </tr>
 <tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Lene Hau</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
+	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
 </tr>
 <tr>
-	<td class = "padding"><label class = "holdNavn" for="Hold">Jane Goodall</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
-	<td><label for="Hold">ingen</label></td>
+	<td class = "padding"><label class = "holdNavn">Jane Goodall</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
+	<td><label>ingen</label></td>
 </tr>
 </table>
+
 </div>
 
 </body>
