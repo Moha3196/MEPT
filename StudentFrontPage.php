@@ -29,13 +29,14 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<!-- <tr> -->
+<?php getTests(0);?>  <!-- function makes it's own row for each test. Calls function with a certain status-value (here it's 0 for "Forrige tests") -->
+
+<!-- <tr> -->  <!-- placeholder code. No longer needed, since correct code is implemented -->
 	<!-- <td class = "padding"><label class = "holdNavn">Lene Hau</label></td> -->
-	<!-- <td><?php //getTests();?></td> -->
+	<!-- <td></td> -->
 	<!-- <td><label>ingen</label></td> -->
 	<!-- <td><label>ingen</label></td> -->
 	<!-- <td><label>ingen</label></td> -->
-	<?php getTests();?>
 <!-- </tr> -->
 
 
@@ -78,21 +79,23 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<tr>
-	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-</tr>
+<?php getTests(1);?>  <!-- calls function with a certain status-value (here it's 1 for "Nuværende tests") -->
 
-<tr>
-	<td class = "padding"><label class = "holdNavn">Jane Goodall</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-</tr>
+<!-- <tr> -->  <!-- placeholder code. No longer needed, since correct code is implemented -->
+	<!-- <td class = "padding"><label class = "holdNavn">Lene Hau</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+	<!-- <td class = "padding"><label class = "holdNavn">Jane Goodall</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+<!-- </tr> -->
 
 </table>
 </table>
@@ -109,20 +112,25 @@
 	<th><label>Startdato</label></th>
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-</tr>
-<tr>
-	<td class = "padding"><label class = "holdNavn">Jane Goodall</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-	<td><label>ingen</label></td>
-</tr>
+
+<?php getTests(2);?>  <!-- calls function with a certain status-value (here it's 2 for "Planlagte tests") -->
+
+<!-- <tr> -->  <!-- placeholder code. No longer needed, since correct code is implemented -->
+	<!-- <td class = "padding"><label class = "holdNavn">Lene Hau</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+	<!-- <td class = "padding"><label class = "holdNavn">Jane Goodall</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+	<!-- <td><label>ingen</label></td> -->
+<!-- </tr> -->
+
 </table>
 
 </div>

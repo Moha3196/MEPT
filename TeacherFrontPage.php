@@ -1,7 +1,7 @@
 <?php include_once("./template.php");?>
 <?php include_once("./testSystem.php");?>
 
-¨<!doctype html>
+<!doctype html>
 <html>
  <?php LoadTemplate("header");?>
  
@@ -36,7 +36,9 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<tr>
+<?php getTests(0);?>  <!-- function makes it's own row for each test. Calls function with a certain status-value (here it's 0 for "Forrige tests") -->
+
+<!--<tr>  placeholder code. No longer needed, since correct code is implemented
 	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
@@ -46,15 +48,11 @@
 
 <tr>
 	<td class = "padding" ><label class = "holdNavn">Jane Goodall</label></td>
-	<td><label>ingen	</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
-</tr>
-	
-
-
-
+	<td><label>ingen</label></td>
+</tr> -->
 
  <!-- <tr>
     <td>  <label for="Answer">Answer1</label></td>
@@ -85,7 +83,9 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<tr>
+<?php getTests(1);?>  <!-- calls function with a certain status-value (here it's 1 for "Nuværende tests") -->
+
+<!--<tr>  placeholder code. No longer needed, since correct code is implemented
 	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
@@ -99,7 +99,7 @@
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
-</tr>
+</tr> -->
 </table>
 
 <table>
@@ -115,7 +115,9 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<tr>
+<?php getTests(2);?>  <!-- calls function with a certain status-value (here it's 2 for "Planlagte tests") -->
+
+<!--<tr>  placeholder code. No longer needed, since correct code is implemented
 	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
@@ -129,13 +131,9 @@
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
 	<td><label>ingen</label></td>
-</tr>
+</tr> -->
 </table>
-
 </div>
 
 </body>
-
-
-
 </html>
