@@ -6,7 +6,7 @@
  <?php LoadTemplate("header");?>
  
 <head>
-  <?php echo '<script src="teacher.js"></script>';?>
+  <?php echo '<script src="student.js"></script>';?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

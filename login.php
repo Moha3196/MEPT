@@ -1,4 +1,4 @@
-<?php
+<?php  //linje 1-216 er ikke skrevet af os, men af Anton Rosenørn. Han har derefter forklaret os, hvordan koden fungerer, så vi selv forstår det, og vi har så selv kommenteret koden
 require(".\dbconnect.php");
 class UserLookup
 {

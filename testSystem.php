@@ -1,4 +1,4 @@
-<?php
+<?php  //nærmest al koden her er skrevet af Niklas og Anton Rosenørn, der arbejdede sammen om at skrive koden. Koden er efterfølgende blevet kommenteret af os
 include_once("./dbconnect.php");
 
 function updateStatus()

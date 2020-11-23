@@ -1,5 +1,6 @@
 <?php include_once("./template.php");?>
 
+
 <!doctype html>
   <html>
 	<?php LoadTemplate("header");?>
@@ -16,14 +17,13 @@
   <body>
 
   <h1 style="font-size: 40px;">Create Class</h1>
-    <label style="display: block; margin:0 auto;font-size: 30px;  
-">Name of class</label>
+    <label style="display: block; margin:0 auto;font-size: 30px;">Name of class</label>
 	<input style="display: block; margin:0 auto; width:10%;    font-size: 20px;  "type="text" id="ClassName" name="ClassName" value=""><br>  <!--Navngive klassen -->
 
-
+<!--
 <div class="center2">
 
-<table>  <!--Laver en list med eleverne der er i klassen og dem der ikke er -->
+<table>
   <tr>
     <td class="StudentNames"></td>
 	<td class="arrows"><button class="Select">&laquo; Select</button></td>
@@ -62,8 +62,8 @@
  
 <table>
   <tr>
-	<td class="arrows"><button class="Select">Select All</button></td>  <!--Laver en knap, der kan vælge  alle eleverne -->
-	<td class="arrows"><button class="Remove">Remove All</button></td>  <!--Laver en knap, der kan fjerne alle eleverne -->
+	<td class="arrows"><button class="Select">Select All</button></td>
+	<td class="arrows"><button class="Remove">Remove All</button></td>
   </tr>
   </table>
   
@@ -74,6 +74,14 @@
 </table>
 
 </div>
+-->
+
+<form action="uploader.php" method="post" enctype="multipart/form-data">
+  
+  Upload CSV-fil med elever:
+  <input type="file" name="fileToUpload" id="uploadedFile">
+  <input type="submit" value="Upload File" name="submit">
+</form>
 
 
 </body>
