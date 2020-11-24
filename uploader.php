@@ -16,31 +16,31 @@ if(isset($_POST["submit"])) {
 		
 		foreach($file_as_string as $entry)  //each of the newly created strings is saved under the variable name "entry" since it will be used as an entry in the database later on
 		{
-			$line = explode(",", $entry); //now we split each entry where a comma is present
-			$line_arr[$counter] = $line; //saves all the lines just made to an array. Uses counter as an index to cycle through the entire array
-			var_dump($line_arr[$counter]);
-			
-			$mysql_internal = Connect();  //connects to database
-			$sql_req = "INSERT INTO classes (className, studentCount) VALUES (" . "'" . $ . "'". ")";  //stores the values from the new "row" array in the database
-			$mysql_internal->query($sql_req); //sends this to the database
-			$mysql_internal->close(); //closes the database, since we're done using it
+			if($couter != 0)
+			{
+				$line = explode(",", $entry); //now we split each entry where a comma is present
+				$line_arr[$counter-1] = $line; //saves all the lines just made to an array. Uses counter as an index to cycle through the entire array
+				var_dump($line_arr[$counter]);
 		
-			$counter++; //adds 1 to the counter, so that all the different indexes are used, and not just one of them
+				$counter++; //adds 1 to the counter, so that all the different indexes are used, and not just one of them
+			}
 		}
 		$counter = 0;
-		
+		/*
 		$mysql_internal = Connect();  //connects to database
 		$sql_req = "INSERT INTO classes (className) VALUES (" . "'" . $newClassName . "'". ")";  //stores the values from the new "row" array in the database
 		$mysql_internal->query($sql_req); //sends this to the database
 		$mysql_internal->close(); //closes the database, since we're done using it
+		*/
 		
 		foreach($line_arr as $row) //each of the lines in the array is saved to the "row" variable
 		{
-			if($counter >= 0)
-			{
+			$mysql_internal = Connect();  //connects to database
+			$sql_req = "INSERT INTO classes (className, studentCount) VALUES (" . "'" . $row[0] . "'". $row[1] . ")";  //stores the values from the new "row" array in the database
+			$mysql_internal->query($sql_req); //sends this to the database
+			$mysql_internal->close(); //closes the database, since we're done using it
 				
-				$counter++;
-			}
+			$counter++;
 		}
 		//readfile($_FILES["uploadedFile"]["tmp_name"]);
 	}
