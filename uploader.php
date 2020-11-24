@@ -3,6 +3,8 @@
 
 include_once("./dbconnect.php");
 
+$exitStatus = 1;
+
 if(isset($_POST["submit"])) {
 	if ($_FILES["uploadedFile"]["error"] == 0) {
 		$newClassName = $_POST["ClassName"];
@@ -44,13 +46,19 @@ if(isset($_POST["submit"])) {
 			$sql_req = "INSERT INTO classes (className, studentCount) VALUES (" . "'" . $row[0] . "',". $row[1] . ")";  //stores the values from the new "row" array in the database
 			$mysql_internal->query($sql_req); //sends this to the database
 			$mysql_internal->close(); //closes the database, since we're done using it
-				
+			
 			$counter++;
 		}
 		//readfile($_FILES["uploadedFile"]["tmp_name"]);
 	}
 	else {
-		echo 'Uupload failed. Error is: ' . $_FILES["uploadedFile"]["error"];
+		echo 'Upload failed. Error is: ' . $_FILES["uploadedFile"]["error"];
+		$exitStatus = 0;
 	}
 }
+else {
+	$exitStatus = 0;
+}
+
+echo '<script>document.location.href="TeacherFrontPage.php?status=' . $exitStatus . '"</script>';
 ?>

@@ -7,11 +7,28 @@
  
 <head>
   <?php echo '<script src="teacher.js"></script>';?>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body> 
+<body>
+<?php LoadTemplate("overlay");?>
+
+<?php if (isset($_GET["status"])) {
+	  echo '<script>
+	  switch (' . $_GET["status"] . ') {
+		  case 0:
+			OverlayMessage("Failed to create class", OverlayType.ERROR);
+			break;
+			
+		  case 1:
+			OverlayMessage("Successfully created class", OverlayType.SUCCESS);
+			break;
+	  }
+	  </script>';
+  }
+  ?>
 
 <button id="close" class="closing" style ="border: none; position: fixed; onClick="javascript:close_clip()"><img src="MEPT.png" width="100" height="100" ></button>
 
