@@ -17,10 +17,19 @@
   <body>
 
   <h1 style="font-size: 40px;">Create Class</h1>
-    <label style="display: block; margin:0 auto;font-size: 30px;">Name of class</label>
-	<input style="display: block; margin:0 auto; width:10%;    font-size: 20px;  "type="text" id="ClassName" name="ClassName" value=""><br>  <!--Navngive klassen -->
+   
+	
+	<form action="uploader.php" method="post" enctype="multipart/form-data"> <!-- "action" refers to where we want to send the uploaded file. We don't want to encode the input, so we use multipart/form-data to avoid it.-->
+		<label style="display: block; margin:0 auto;font-size: 30px;">Name of class</label>  <!-- enctype="" requires method="post", so we also have that -->
+		<input style="display: block; margin:0 auto; width:10%; font-size: 20px; "type="text" id="ClassName" name="ClassName" value=""><br>
+		
+		Upload CSV-fil med elever:
+		<input type="file" name="uploadedFile" id="uploadedFile">  <!--the name attribute is relevant for line 7 in uploader.php, because that's what is used - not the id -->
+		<input type="submit" value="Upload Fil" name="submit"> <!-- we tell the program that we want to submit this chosen file afterwards -->
+	</form>
 
-<!--
+
+<!--  the original code we wanted to use for creating classes, but we decided to let users upload files instead
 <div class="center2">
 
 <table>
@@ -75,14 +84,6 @@
 
 </div>
 -->
-
-<form action="uploader.php" method="post" enctype="multipart/form-data">
-  
-  Upload CSV-fil med elever:
-  <input type="file" name="fileToUpload" id="uploadedFile">
-  <input type="submit" value="Upload File" name="submit">
-</form>
-
 
 </body>
 </html>
