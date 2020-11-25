@@ -13,7 +13,7 @@
 
 <body> 
 
-<button id="close" class="closing" style ="border: none; position: fixed; onClick="javascript:close_clip()"><img src="MEPT.png" width="100" height="100" ></button>
+<button id="close" class="closing" style ="border: none; position: fixed;" onClick="javascript:close_clip()"><img src="MEPT.png" width="100" height="100" ></button>
 <div class="center2" style = "padding-top : 22px;">
   
 <table>
