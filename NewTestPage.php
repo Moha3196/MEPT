@@ -1,9 +1,11 @@
 <?php include_once("./template.php");?>
 
+
 <!doctype html>
 <html>
 	<head>
 	<?php LoadTemplate("header");?>
+	<?php echo '<script src="teacher.js"></script>';?>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +22,10 @@
 		
 		<table class="testpageTable">
 		<tr>
-			<td style="border:0px"><button class="Remove">Finish Quiz</button></td>
+			<td style="border:0px"><button class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" type="button" onclick="GoToTeacherFrontPage();">Finish Quiz</button></td>
+
+			<!-- <td style="border:0px"><button class="Remove" type="button" onclick="GoToTeacherFrontPage();">Finish Quiz</button></td> 
+			document.location.href='./TeacherFrontPage.php'-->
 		</tr>
 		</table>
 	</body>
