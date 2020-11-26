@@ -14,6 +14,21 @@
 	</head>
 	
 	<body>
+
+		<form action="submitTest.php" method="post">
+		<?php
+		$now = new DateTime("now");
+		date_format($now, 'Y-m-d H:i:s'); 
+		echo '<h1><input type="date" id="start" name="trip-start"
+        value="2018-07-22"
+        min="' . $now . '" max="2018-12-31"></h1>';
+
+        ?>
+
+		<h1><input type="text" name="testTitle" placeholder="Test Name"/></h1>
+		<h1><input type="date" min="2020-11-26" max="2020-12-01" name="startDate" placeholder="Pick Starting Date"/><input type="date" name="deadline" placeholder="Pick Deadline"/></h1>
+		<h1><input type="text" name="forClass" placeholder="Choose Class"/></h1>
+		
 		<?php 
 		for ($i = 0; $i < 10; $i++) {  //Each test consists of 10 questions
 			drawQuestion($i+1, $i+1);  // We originally wanted more, but we're pressed for time and have decided to get the bare minimum,
@@ -22,12 +37,13 @@
 		
 		<table class="testpageTable">
 		<tr>
-			<td style="border:0px"><button class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" type="button" onclick="GoToTeacherFrontPage();">Finish Quiz</button></td>
+			<td style="border:0px"><input type="submit" name="submit" class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" type="button"></input></td>
 
 			<!-- <td style="border:0px"><button class="Remove" type="button" onclick="GoToTeacherFrontPage();">Finish Quiz</button></td> 
 			document.location.href='./TeacherFrontPage.php'-->
 		</tr>
 		</table>
+	</form>
 	</body>
 </html>
 
@@ -35,8 +51,8 @@
 <?php
 function drawQuestion($id,$questionNumber) {
 	echo '
-		<h1>Question ' . $questionNumber . ' of 10</h1>;
-		<h1><input class="testpageInput" type="text" id="Question" name="Question" value="Question"></h1>
+		<h2>Question ' . $questionNumber . ' of 10</h2>
+		<h2><input class="testpageInput" type="text" id="Question" name="Question" value="Question"></h2>
 	
 		<div class="testpageDiv">
 		<table class="testpageTable">  <!-- Laver skemaet hvor lærere kan putte svar ind-->
