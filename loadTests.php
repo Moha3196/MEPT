@@ -60,5 +60,4 @@ function getQuestions($testID)  //function for connecting to db and getting all 
 	
 	$mysql->close();  //closes the database search because we're done looking up / getting stuff in it
 }
-
 ?>

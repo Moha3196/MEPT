@@ -15,9 +15,9 @@
 	
 	<body>
 		<?php 
-		for ($i = 0; $i < 10; $i++) { //Each test consists of 10 questions
-			drawQuestion($i+1, $i+1);           // We originally wanted more, but we're pressed for time and have decided to get the bare minimum,
-		}                             // then build more on this, if we have time later 
+		for ($i = 0; $i < 10; $i++) {  //Each test consists of 10 questions
+			drawQuestion($i+1, $i+1);  // We originally wanted more, but we're pressed for time and have decided to get the bare minimum,
+		}                              // then build more on this, if we have time later 
 		?>
 		
 		<table class="testpageTable">
@@ -47,8 +47,8 @@ function drawQuestion($id,$questionNumber) {
 		
 		<tr>
 			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer1" name="QuestionAnswer1" value=""></td>
-			<td style="width : 5%;">  <input type="radio" id="QuestionAnswer1" name="QuestionAnswer' . $id . '"></td>
-		</tr>
+			<td style="width : 5%;">  <input type="radio" id="QuestionAnswer1" name="QuestionAnswer' . $id . '"></td>  <!-- We add the id from the for-loop, that calls this function -->
+		</tr>																										   <!--so each question gets its own set of radio-buttons  -->
 		
 		<tr>
 			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer2" name="QuestionAnswer2" value=""></td>
@@ -68,5 +68,9 @@ function drawQuestion($id,$questionNumber) {
 		</div>
 		<br><br><br>
 	';
+}
+
+function finishNewTest() {
+	
 }
 ?>
