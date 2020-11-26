@@ -16,7 +16,7 @@
 	<body>
 		<?php 
 		for ($i = 0; $i < 10; $i++) { //Each test consists of 10 questions
-			drawQuestion($i+1);           // We originally wanted more, but we're pressed for time and have decided to get the bare minimum,
+			drawQuestion($i+1, $i+1);           // We originally wanted more, but we're pressed for time and have decided to get the bare minimum,
 		}                             // then build more on this, if we have time later 
 		?>
 		
@@ -33,9 +33,9 @@
 
 
 <?php
-function drawQuestion($id) {
+function drawQuestion($id,$questionNumber) {
 	echo '
-		<h1>Question x of 10 </h1>
+		<h1>Question ' . $questionNumber . ' of 10</h1>;
 		<h1><input class="testpageInput" type="text" id="Question" name="Question" value="Question"></h1>
 	
 		<div class="testpageDiv">
