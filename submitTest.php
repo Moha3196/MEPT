@@ -12,6 +12,7 @@ if(isset($_POST["submit"])) {
 
 	$answerArray = [];
 	$questionHeaderArray = [];
+	$correctAnswers = [];
 
 	for ($i = 0; $i < 10; $i++) { 
 		$tmpAnswerArray = [];
@@ -31,7 +32,18 @@ if(isset($_POST["submit"])) {
 		$tmpAnswerArray[2] = $answer3;
 		$tmpAnswerArray[3] = $answer4;
 		$answerArray[$i] = $tmpAnswerArray;
+
+		//Answer Buttons:
+		$correctAnswer = $_POST['Question'. intval($i+1) .'AnswerButtons'];
+		array_push($correctAnswers,$correctAnswer);
+		
+
+
 	}
+	
+	//for ($i=0; $i < 10; $i++) { 
+	//	echo $correctAnswers[$i];
+	//}
 
 	/*echo '<h1>'.$testTitle.'</h1>';
 	for ($i = 0; $i < 10; $i++) { 
@@ -40,7 +52,7 @@ if(isset($_POST["submit"])) {
 			echo '<h3>'.$answerArray[$i][$j].'</h3>';
 		}
 	}*/
-
+	
 	if ($CurrTime < $startDate) {
 		$status = 0;
 	}
@@ -60,16 +72,17 @@ if(isset($_POST["submit"])) {
 	$latestTestID = $mysql->query($sql_req2);
 	/* while($row = $result->fetch_assoc()) {
 		echo $row['id'];
-	} 
-	*/
+	} */
+	
 	$row = $latestTestID->fetch_assoc();
 	
 	for ($i = 0; $i < 10; $i++) { 
-		$sql_req = "INSERT INTO questions (belongsTo, questionHeader, answer1, answer2, answer3, answer4) VALUE (". "'" . $row['id'] . "','" . $questionHeaderArray[$i] . "','" . $answerArray[$i][0] . "','" . $answerArray[$i][1] . "','" . $answerArray[$i][2] . "','" . $answerArray[$i][3] . "')";
+		$sql_req = "INSERT INTO questions (belongsTo, questionHeader, answer1, answer2, answer3, answer4, correctAnswer) VALUE (". "'" . $row['id'] . "','" . $questionHeaderArray[$i] . "','" . $answerArray[$i][0] . "','" . $answerArray[$i][1] . "','" . $answerArray[$i][2] . "','" . $answerArray[$i][3] . "','" . $correctAnswers[$i] . "')";
 		$mysql->query($sql_req);
 
 	}
 	$mysql->close();
+	
 }
 
 echo '<script>document.location.href="TeacherFrontPage.php"</script>';
