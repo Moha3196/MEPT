@@ -57,12 +57,12 @@ if(isset($_POST["submit"])) {
 
 	$latestTestID = "";
 	$sql_req2 = "SELECT * FROM tests ORDER BY id DESC LIMIT 1";
-	$result = $mysql->query($sql_req2);
+	$latestTestID = $mysql->query($sql_req2);
 	/* while($row = $result->fetch_assoc()) {
 		echo $row['id'];
 	} 
 	*/
-	$row = $result->fetch_assoc();
+	$row = $latestTestID->fetch_assoc();
 	
 	for ($i = 0; $i < 10; $i++) { 
 		$sql_req = "INSERT INTO questions (belongsTo, questionHeader, answer1, answer2, answer3, answer4) VALUE (". "'" . $row['id'] . "','" . $questionHeaderArray[$i] . "','" . $answerArray[$i][0] . "','" . $answerArray[$i][1] . "','" . $answerArray[$i][2] . "','" . $answerArray[$i][3] . "')";
