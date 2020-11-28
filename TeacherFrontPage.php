@@ -53,7 +53,7 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<?php getTests(0);?>  <!-- function makes it's own row for each test. Calls function with a certain status-value (here it's 0 for "Forrige tests") -->
+<?php getTestsForTeacher(0);?>  <!-- function makes it's own row for each test. Calls function with a certain status-value (here it's 0 for "Forrige tests") -->
 
 <!--<tr>  placeholder code. No longer needed, since correct code is implemented
 	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
@@ -100,7 +100,7 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<?php getTests(1);?>  <!-- calls function with a certain status-value (here it's 1 for "Nuværende tests") -->
+<?php getTestsForTeacher(1);?>  <!-- calls function with a certain status-value (here it's 1 for "Nuværende tests") -->
 
 <!--<tr>  placeholder code. No longer needed, since correct code is implemented
 	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>
@@ -132,7 +132,7 @@
 	<th><label>Afleveringsfrist</label></</th>
 </tr>
 
-<?php getTests(2);?>  <!-- calls function with a certain status-value (here it's 2 for "Planlagte tests") -->
+<?php getTestsForTeacher(2);?>  <!-- calls function with a certain status-value (here it's 2 for "Planlagte tests") -->
 
 <!--<tr>  placeholder code. No longer needed, since correct code is implemented
 	<td class = "padding"><label class = "holdNavn">Lene Hau</label></td>

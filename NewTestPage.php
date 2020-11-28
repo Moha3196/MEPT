@@ -29,7 +29,7 @@
 		
 		<table class="testpageTable">
 		<tr>
-			<td style="border:0px"><input type="submit" name="submit" class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" type="button"></input></td>
+			<td style="border:0px"><input type="submit" name="submit" class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" value="Create Test"></input></td>
 
 			<!-- <td style="border:0px"><button class="Remove" type="button" onclick="GoToTeacherFrontPage();">Finish Quiz</button></td> 
 			document.location.href='./TeacherFrontPage.php'-->
@@ -57,24 +57,24 @@ function drawQuestion($AnswerButtons,$questionNumber) {
 		</tr>
 		
 		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer1" name="Question' . $questionNumber . 'Answer1" value=""></td>
+			<td> <input style="display: block; margin:0 auto; width: 100%; font-size: 20px;" type="text" id="QuestionAnswer1" name="Question' . $questionNumber . 'Answer1" value=""></td>
 			<td style="width : 5%;">  <input type="radio" name="Question' . $AnswerButtons . 'AnswerButtons" value="1"></td>  
 
 			<!-- We add the id from the for-loop, that calls this function -->
 		</tr>																										   <!--so each question gets its own set of radio-buttons  -->
 		
 		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer2" name="Question' . $questionNumber . 'Answer2" value=""></td>
+			<td> <input style="display: block; margin:0 auto; width: 100%; font-size: 20px;" type="text" id="QuestionAnswer2" name="Question' . $questionNumber . 'Answer2" value=""></td>
 			<td style="width : 5%;">  <input type="radio" name="Question' . $AnswerButtons . 'AnswerButtons" value="2"></td>
 		</tr>
 		
 		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer3" name="Question' . $questionNumber . 'Answer3" value=""></td>
+			<td> <input style="display: block; margin:0 auto; width: 100%; font-size: 20px;" type="text" id="QuestionAnswer3" name="Question' . $questionNumber . 'Answer3" value=""></td>
 			<td style="width : 5%;">  <input type="radio" name="Question' . $AnswerButtons . 'AnswerButtons" value="3"></td>
 		</tr>
 		
 		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer4" name="Question' . $questionNumber . 'Answer4" value=""></td>
+			<td> <input style="display: block; margin:0 auto; width: 100%; font-size: 20px;" type="text" id="QuestionAnswer4" name="Question' . $questionNumber . 'Answer4" value=""></td>
 			<td style="width : 5%;">  <input type="radio" name="Question' . $AnswerButtons . 'AnswerButtons" value="4"></td>
 		</tr>
 		</table>
@@ -84,43 +84,5 @@ function drawQuestion($AnswerButtons,$questionNumber) {
 
 
 }
-
-/*
-function drawQuestion($id,$questionNumber) {
-	echo '
-		<h2>Question ' . $questionNumber . ' of 10</h2>
-		<h2><input class="testpageInput" type="text" id="Question" name="Question' . $questionNumber . '" value="Question"></h2>
-	
-		<div class="testpageDiv">
-		<table class="testpageTable">  <!-- Laver skemaet hvor lærere kan putte svar ind-->
-		<tr>
-			<th class="arrows">Skriv spørgsmål</th>  <!--Laver en knap, der kan gør så man kan gå tilbage til et tidligere spørgsmål -->
-			<th class="arrows">Vælg Korrekt Svar</th>  <!--Laver en knap, der kan gør så man kan gå frem igen -->
-		</tr>
-		
-		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer1" name="Question' . $questionNumber . 'Answer1" value=""></td>
-			<td style="width : 5%;">  <input type="radio" id="QuestionAnswer1" name="QuestionAnswer' . $id . '"></td>  <!-- We add the id from the for-loop, that calls this function -->
-		</tr>																										   <!--so each question gets its own set of radio-buttons  -->
-		
-		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer2" name="Question' . $questionNumber . 'Answer2" value=""></td>
-			<td style="width : 5%;">  <input type="radio" id="QuestionAnswer2" name="QuestionAnswer' . $id . '"></td>
-		</tr>
-		
-		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer3" name="Question' . $questionNumber . 'Answer3" value=""></td>
-			<td style="width : 5%;"><input type="radio" id="QuestionAnswer3" name="QuestionAnswer' . $id . '"></td>
-		</tr>
-		
-		<tr>
-			<td> <input style="display: block; margin:0 auto; width: 50%; font-size: 20px;" type="text" id="QuestionAnswer4" name="Question' . $questionNumber . 'Answer4" value=""></td>
-			<td style="width : 5%;"><input type="radio" id="QuestionAnswer4" name="QuestionAnswer' . $id . '"></td>
-		</tr>
-		</table>
-		</div>
-		<br><br><br>
-	';
-} */
 
 ?>
