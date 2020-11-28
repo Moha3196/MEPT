@@ -1,0 +1,307 @@
+/*Animations*/
+@keyframes overlayAnimation
+{
+  from
+  {
+    transform: translateY(-3000px);
+  }
+  to
+  {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes overlayAnimationExit
+{
+  from
+  {
+    transform: translateY(-3000px);
+    display: none;
+  }
+  to
+  {
+    transform: translateY(0px);
+  }
+}
+
+h1 {
+	text-align: center;
+}   
+h2 {    
+	text-align: center;
+}   
+h3 {
+	text-align: center;
+}   
+h4 {
+	text-align: center;
+	font-size: 50px;
+}   
+h5 {
+	text-align: center;
+}       
+h6 {
+	text-align: center;
+}
+p {
+	text-align: center;
+}
+
+button       
+  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+CreateClassButton
+{
+	display: block;
+	border: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+	background-color: #c9c9c9;
+}
+
+CreateClassButton:hover
+{
+	background-color: #aaaaaa;
+}
+
+form {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+formP {
+	margin-right: 20px;
+	font-size: 20px;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.center2
+{
+	border: 3px solid;
+	display: block;
+	margin: 1% 12%;
+	height: auto;
+	padding: 10px;
+}
+
+#header
+{
+  border: 2px solid black;
+}
+
+#loginWidget
+{
+  max-width: 300px;
+  border: 2px solid black;
+  border-radius: 2px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10% auto;
+}
+
+div {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 10% auto;
+}
+
+@media only screen and (max-width: 600px)
+{
+  .overlayEntry>h3
+  {
+    font-size: 10px;
+  }
+  .overlayEntry
+  {
+    max-width: 100%;
+  }
+  .overlayEntry>img
+  {
+    max-width: 40px;
+  }
+}
+
+@media only screen and (min-width: 601px)
+{
+  .overlayEntry
+  {
+    max-width: 50%;
+  }
+  .overlayEntry>img
+  {
+    max-width: 80px;
+  }
+}
+
+.overlayEntry
+{
+  display: block;
+  /*position: absolute;*/
+  margin-left: auto;
+  margin-right: auto;
+  animation: overlayAnimation 2s, overlayAnimationExit 2s 5s reverse forwards;
+}
+
+.overlayEntry.error
+{
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.3);
+}
+.overlayEntry.info
+{
+  border: 2px solid rgba(31, 140, 249, 0.67);
+  border-radius: 10px;
+  background-color: rgba(31, 140, 249, 0.67);
+}
+.overlayEntry.warning
+{
+  border: 2px solid rgba(249, 249, 31, 0.67);
+  border-radius: 10px;
+  background-color: rgba(249, 249, 31, 0.67);
+}
+.overlayEntry.success
+{
+  border: 2px solid rgba(31, 249, 31, 0.67);
+  border-radius: 10px;
+  background-color: rgba(31, 249, 31, 0.67);
+}
+#overlay
+{
+  position: absolute;
+  width: 50%;
+  /*margin-left: auto;
+  margin-right:auto;*/
+}
+
+
+.klasseTestButton
+{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;  
+	background-color: #c9c9c9;
+}
+
+.klasseTestButton:hover
+{
+  background-color: #aaaaaa;
+}
+
+.padding
+{
+	 padding: 31px;
+}
+
+.holdNavn
+{
+	font-size: 20px;
+}
+
+.titler
+{
+	font-size: 45px;
+}
+
+.StudentNames
+{
+	width: 12%;
+	font-size: 20px;
+}
+
+.arrows
+{
+	width: 10%;
+	padding: 10px;
+}
+
+.Select {
+	display: inline-block;
+	width: 27%;
+	color: black;
+	border: 1px solid black;
+}
+
+.Remove {
+	display: inline-block;
+	width: 27%;
+	color: black;
+	border: 1px solid black;
+}
+
+input
+{
+	
+}
+
+label
+{
+	font-size: 20px;
+}
+
+table,td, tr, th
+{
+	border: 1px solid black;
+	padding: 15px;
+	text-align: center; 
+	border-collapse: collapse;
+	font-family: "Arial";
+}
+
+table
+{
+	width: 100%;
+}
+
+td,th
+{
+	width: 20%;
+}
+
+tr:hover
+{
+	background-color: #f5f5f5;
+}
+
+.testpageTable
+{
+    width:100%;
+
+}
+
+.testpageDiv
+{
+	border: 3px solid ;
+	border-collapse: collapse;
+	display: block;
+	margin-right: 28.5%;
+	margin-left: 28.5%;
+	height: auto;
+	padding: 0px;
+	margin-top: 0px;
+    margin-bottom: 0px;
+	margin: auto 28.5%;
+}
+
+.testpageInput
+{
+	display: block;
+	margin: 0px auto;
+	width: 50%;
+	font-size:20px;
+}
+
+

@@ -1,0 +1,4 @@
+AddType application/x-httpd-php-latest .php
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule .? https://%{HTTP_HOST}%{REQUEST_URI} [R=302,L]
