@@ -55,7 +55,7 @@ include_once("./dbconnect.php");
 					$index++;
 				}
 			}
-
+			echo '<input type="hidden" name="numberOfRows" value="'.$numberOfRows.'"/><input type="hidden" name="testId" value="'.$testID.'"/>';
 
 			$mysql->close();
 		}
@@ -63,7 +63,7 @@ include_once("./dbconnect.php");
 
 		<table class="testpageTable">
 			<tr>
-				<td style="border:0px"><input type="submit" name="submit" class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" type="button"></input></td>
+				<td style="border:0px"><input type="submit" name="submitTestAnswers" class = "klasseTestButton"  style=" float: center; width: 20%; font-size: 30px; margin: auto; 10px" type="button"></input></td>
 
 			<!-- <td style="border:0px"><button class="Remove" type="button" onclick="GoToTeacherFrontPage();">Finish Quiz</button></td> 
 				document.location.href='./TeacherFrontPage.php'-->

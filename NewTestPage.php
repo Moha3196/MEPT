@@ -47,7 +47,7 @@
 function drawQuestion($AnswerButtons,$questionNumber) {
 	echo '
 		<h2>Question ' . $questionNumber . ' of 10</h2>
-		<h2><input class="testpageInput" type="text" id="Question" name="Question' . $questionNumber . '" value="Question"></h2>
+		<h2><input class="testpageInput" type="text" id="Question" name="Question' . $questionNumber . '" placeholder="Write your question here"></h2>
 	
 		<div class="testpageDiv">
 		<table class="testpageTable">  <!-- Laver skemaet hvor lærere kan putte svar ind-->

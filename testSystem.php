@@ -63,6 +63,11 @@ function getTestsForTeacher($statusValue)  //function for connecting to db and g
     {
 		while($row = $result->fetch_assoc())
 		{
+
+			$uniqueAnswers = "SELECT COUNT(DISTINCT (studentID)) FROM answers WHERE testID = '". $row["id"] . "';";
+			$uniqueAnswersData = $mysql->query($uniqueAnswers);
+			$uniqueAnswersData = $uniqueAnswersData->fetch_assoc();
+			$uniqueAnswersDataCount = $uniqueAnswersData["COUNT(DISTINCT (studentID))"];
 			
 			if ($row["status"] == $statusValue) { //if the status of a test is equal to what we call the function with, then loads the info for that specific test
 				echo '<tr>'; //starts a new row for each test
@@ -83,8 +88,8 @@ function getTestsForTeacher($statusValue)  //function for connecting to db and g
 					echo '<td><label>Ikke angivet</label></td>';
 				}
 				
-				
-				echo '<td><label>' . $row["status"];  //enters the status (forrig, nuværende, planlagt) of the found test as table-data
+				#echo '<td><label>' . $row["status"];  //enters the status (forrig, nuværende, planlagt) of the found test as table-data
+				echo '<td><label>' . $uniqueAnswersDataCount;  //enters the status (forrig, nuværende, planlagt) of the found test as table-data
 				echo '</label></td>';
 				
 				echo '<td><label>' . $row["startDate"];  //enters the starting date of the found test as table-data
@@ -111,6 +116,14 @@ function getTestsForTeacher($statusValue)  //function for connecting to db and g
 
 function getTestsForStudent($statusValue)  //function for connecting to db and getting all the tests it contains
 {
+
+	//ob_start(); // ob_start — Turn on output buffering
+	//echo '<script>var userID = localStorage.getItem("userID"); document.write(userID);</script>';
+	//$userIDFromLocalStorage = ob_get_clean(); // Get current buffer contents and delete current output buffer
+	//echo $userIDFromLocalStorage;
+
+
+
 	updateStatus();  //runs the update status, BEFORE we grab any data from the "tests" table in the database (which happens on the next line of code)
 	
 	$sqlRequest = 'SELECT * FROM `tests`';  //takes everything from the "tests" table in the db

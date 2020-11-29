@@ -1,5 +1,6 @@
 <?php  //linje 1-216 er ikke skrevet af os, men af Anton Rosenørn. Han har derefter forklaret os, hvordan koden fungerer, så vi selv forstår det, og vi har så selv kommenteret koden
 require("./dbconnect.php");
+
 class UserLookup
 {
   public $id = 0;
@@ -29,7 +30,6 @@ class UserLookup
     $this->Close();  //makes sure it's closed before trying to open
     $this->mysql = Connect();  //runs connect func again
   }
-  
   
   public function UsernameCheck()
   {
@@ -163,6 +163,7 @@ else
         echo "Reported username: " . $userLook->username . "<br>";
         die("mysql not intilized??");
       }
+
       //$userLook->Open();
       if($userLook->UsernameCheck())  //if both username and password (hashed) match, then logs in
       {
@@ -172,8 +173,14 @@ else
           echo '<script>OverlayMessage("Site is still under contruction",OverlayType.INFO);</script>';
           $userLook->GetUserType();
 		  if($userLook->type == 1) {  //type 1 means a teacher account
-			TeacherLoggedIn();  //loads teacher-related pages
+       #$_SESSION['userID'] = $userLook->id;
+       #setUserIDCookie("userID", $userLook->id);
+       echo '<script>localStorage.setItem("userID", '.$userLook->id.');</script>'; // Sets userID in LocalStorage
+			 TeacherLoggedIn();  //loads teacher-related pages
 		  } else if($userLook->type == 0) {  //type 0 means a student account
+        #$_SESSION['userID'] = $userLook->id; 
+        #setUserIDCookie("userID", $userLook->id);  
+        echo '<script>localStorage.setItem("userID", '.$userLook->id.');</script>'; // Sets userID in LocalStorage
 			  StudentLoggedIn();  //loads student-related pages
 		  }
 		$userLook->Close();  //we close the userLook, because we have now logged in
@@ -213,6 +220,11 @@ echo '</body></html>';
 function Sanitize($input)
 {
   return filter_var($input,FILTER_SANITIZE_STRING);
+}
+
+function setUserIDCookie($cookieName, $cookieValue) {
+  //setcookie($cookie_name, $cookie_value);
+  //echo '<script>localStorage.setItem('.$cookieName.', '.$cookieValue.');</script>';
 }
 
 
