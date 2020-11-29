@@ -1,5 +1,8 @@
-<?php  //linje 1-216 er ikke skrevet af os, men af Anton Rosenørn. Han har derefter forklaret os, hvordan koden fungerer, så vi selv forstår det, og vi har så selv kommenteret koden
-require("./dbconnect.php");
+<?php
+//line 1-225 is not written by us, but by Anton Rosenørn.
+//He has explained to us, how the code works, so we also understand how it works, and we have then commented the code ourselves
+
+require("./dbconnect.php");  //the file with the Connect() and close()-functions
 class UserLookup
 {
   public $id = 0;
@@ -16,7 +19,7 @@ class UserLookup
     $this->mysql = Connect();  //runs function that connects to DB
   }
 
-  public function Close()  //function for closing DB
+  public function Close()  //function for closing DB. Specific function for this class
   {
     if($this->mysql)
     {
@@ -30,7 +33,6 @@ class UserLookup
     $this->mysql = Connect();  //runs connect func again
   }
   
-  
   public function UsernameCheck()
   {
     $sqlRequest = "SELECT username, id FROM Users";  //sets the variable to whatever is in the "username" from DB
@@ -39,7 +41,7 @@ class UserLookup
     {
       while($row = $result->fetch_assoc())
       {
-        if($row['username'] == $this->username)
+        if($row['username'] == $this->username)  //if entered username matches username in the db
         {
           $this->id = $row['id'];
           return TRUE;
@@ -96,11 +98,11 @@ class UserLookup
           break;
         }
       }
-      return FALSE;  //if written pw does not match pre-hashed pw in DB, then returns false
+      return FALSE;  //if written password does not match pre-hashed password in DB, then returns false
     }
     else
     {
-      echo "<h2 id='loginError' class='error'>DataBase Error</h2>";  //heehoo another error for u
+      echo "<h2 id='loginError' class='error'>DataBase Error</h2>";  //heehoo another error for you
       echo "Request : " . $sqlRequest;
       die();
     }
@@ -112,14 +114,13 @@ function ShowLogin()  //made as a form because the user will fill out username +
 {
   echo '<h4 id="loginHeader" style="text-align: center;">Login</h4>
   <form id="loginForm" method="post" action="login.php">
-    <formP > Username </formP><input name="username" id="usernameField" type="text"></input><br><br>   <!-- the username text box -->
-    <formP > Password </formP><input name="password" id="passField" type="password"></input><br><br>   <!-- the password text box -->
-	<button type="submit" name="login" id="loginBtn">Login</button>                                    <!-- The login button -->
+    <formP> Username </formP><input name="username" id="usernameField" type="text"></input><br><br>   <!--the username text box-->
+    <formP> Password </formP><input name="password" id="passField" type="password"></input><br><br>   <!--the password text box-->
+	<button type="submit" name="login" id="loginBtn">Login</button>                                   <!--The login button-->
   </form>';
 }
 
 ?>
-
 
 
 <?php
@@ -137,7 +138,7 @@ else
   LoadTemplate("header");
   echo '<body>';
   LoadTemplate("overlay");
-  if((strlen($_POST['username']) >= 5 || strlen($_POST['password']) >= 5) && (strlen($_POST['username']) <= 30 || strlen($_POST['password']) <= 30))
+  if((strlen($_POST['username']) >= 5 || strlen($_POST['password']) >= 5) && (strlen($_POST['username']) <= 30 || strlen($_POST['password']) <= 30))  //specifies min/max length of a username & password
   {
     $sane_username = Sanitize($_POST['username']);
     $sane_password = Sanitize($_POST['password']);
@@ -148,7 +149,8 @@ else
       password VARCHAR(256) NOT NULL,
       type INT(10) NOT NULL,
       last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    )";
+    )";  //above variable creates a new "users"-table, if one doesn't already exist. It should exist, so this is merely a fail-safe
+	
     if($tmp_mysql->query($sqlRequest) !== TRUE)
     {
       echo 'Error on table creation' . $tmp_mysql->error;
@@ -163,6 +165,7 @@ else
         echo "Reported username: " . $userLook->username . "<br>";
         die("mysql not intilized??");
       }
+
       //$userLook->Open();
       if($userLook->UsernameCheck())  //if both username and password (hashed) match, then logs in
       {
@@ -172,8 +175,14 @@ else
           echo '<script>OverlayMessage("Site is still under contruction",OverlayType.INFO);</script>';
           $userLook->GetUserType();
 		  if($userLook->type == 1) {  //type 1 means a teacher account
-			TeacherLoggedIn();  //loads teacher-related pages
+       #$_SESSION['userID'] = $userLook->id;
+       #setUserIDCookie("userID", $userLook->id);
+       echo '<script>localStorage.setItem("userID", '.$userLook->id.');</script>'; // Sets userID in LocalStorage
+			 TeacherLoggedIn();  //loads teacher-related pages
 		  } else if($userLook->type == 0) {  //type 0 means a student account
+        #$_SESSION['userID'] = $userLook->id; 
+        #setUserIDCookie("userID", $userLook->id);  
+        echo '<script>localStorage.setItem("userID", '.$userLook->id.');</script>'; // Sets userID in LocalStorage
 			  StudentLoggedIn();  //loads student-related pages
 		  }
 		$userLook->Close();  //we close the userLook, because we have now logged in
@@ -213,6 +222,11 @@ echo '</body></html>';
 function Sanitize($input)
 {
   return filter_var($input,FILTER_SANITIZE_STRING);
+}
+
+function setUserIDCookie($cookieName, $cookieValue) {
+  //setcookie($cookie_name, $cookie_value);
+  //echo '<script>localStorage.setItem('.$cookieName.', '.$cookieValue.');</script>';
 }
 
 

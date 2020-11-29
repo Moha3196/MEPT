@@ -186,6 +186,13 @@ div {
   margin-right:auto;*/
 }
 
+.homeButton
+{
+	border: none;
+	position: fixed;
+	color: white;
+	background-color: white;
+}
 
 .klasseTestButton
 {
@@ -302,6 +309,14 @@ tr:hover
 	margin: 0px auto;
 	width: 50%;
 	font-size:20px;
+}
+
+.questionAnswerOption
+{
+	display: block;
+	margin:0 auto;
+	width: 100%;
+	font-size: 20px;
 }
 
 
