@@ -165,10 +165,12 @@ function getTestsForStudent($statusValue)  //function for connecting to db and g
 				
 				echo '<td><label>' . $row["endDate"];  //enters the deadline of the found test as table-data
 				if ($statusValue == 1) {
-				echo '<form action="doTests.php" method="post"></label></td><th><input type="submit" name="startTestSubmit" value="Start"></input><input type="hidden" name="testId" value="'.$row["id"].'" /></form>
-				</th>';
-				} else {
-				echo '</label></td>';
+					echo '<form action="doTests.php" method="post"></label></td><th><input type="submit" name="startTestSubmit" value="Start test">
+						</input><input type="hidden" name="testId" value="' . $row["id"] . '" /></form>
+					</th>';
+				}
+				else {
+					echo '</label></td>';
 				}
 				
 				echo '</tr>'; //ends the test's row. The next test will get it's own row

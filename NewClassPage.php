@@ -14,7 +14,9 @@
   <title>Create class</title>
   </head>
   <body>
-
+  
+  <button id="close" class="homeButton" onClick="FrontPage();"><img src="MEPT.png" width="100" height="100" ></button>
+  
   <h1 style="font-size: 40px;">Create Class</h1>
   <br> 
 	

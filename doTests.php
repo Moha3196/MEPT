@@ -6,7 +6,7 @@ include_once("./dbconnect.php");
 <html>
 <head>
 	<?php LoadTemplate("header");?>
-	<?php echo '<script src="teacher.js"></script>';?>
+	<?php echo '<script src="student.js"></script>';?>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,9 @@ include_once("./dbconnect.php");
 </head>
 
 <body>
-
+	
+	<button id="close" class="homeButton" onClick="FrontPage();"><img src="MEPT.png" width="100" height="100" ></button>
+	
 	<form action="submitAnswer.php" method="post">
 		
 
